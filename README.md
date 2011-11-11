@@ -55,11 +55,11 @@ Bocoup.utils.forEach(["a", "b", "c"], function(item, index, arr) {
 The idea is to allow the callback to decide _at runtime_ whether the loop will be synchronous or asynchronous. By using `this` in a creative way (in situations where that value isn't already spoken for), an entire control API can be offered without over-complicating function signatures.
 
 ```javascript
-forEach(arr, function() {
+forEach(arr, function(item, index) {
   // Synchronous.
 });
 
-forEach(arr, function() {
+forEach(arr, function(item, index) {
   // Only when `this.async` is called does iteration becomes asynchronous. The
   // loop won't be continued until the `done` function is executed.
   var done = this.async();
@@ -87,7 +87,9 @@ See the unit tests for more examples.
 
 ```javascript
 // Generic "done" callback.
-function allDone(notAborted, arr) { console.log("done", notAborted, arr); }
+function allDone(notAborted, arr) {
+  console.log("done", notAborted, arr);
+}
 
 // Synchronous.
 forEach(["a", "b", "c"], function(item, index, arr) {
@@ -166,7 +168,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _Also, please don't edit files in the "dist" subdirectory as they are generated via grunt. You'll find source code in the "lib" subdirectory!_
 
 ## Release History
-Nothing official yet...
+
+11/11/2011
+v0.1.0
+Initial Release.
 
 ## License
 Copyright (c) 2011 "Cowboy" Ben Alman  
