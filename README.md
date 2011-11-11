@@ -173,6 +173,10 @@ _Also, please don't edit files in the "dist" subdirectory as they are generated 
 v0.1.0
 Initial Release.
 
+11/11/2011
+v0.1.1
+Refactored code to be much simpler. Yay for unit tests!
+
 ## License
 Copyright (c) 2011 "Cowboy" Ben Alman  
 Dual licensed under the MIT and GPL licenses.  
