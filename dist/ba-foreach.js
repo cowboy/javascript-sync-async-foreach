@@ -1,4 +1,4 @@
-/* JavaScript Sync/Async forEach - v0.1.1 - 11/11/2011
+/* JavaScript Sync/Async forEach - v0.1.2 - 11/17/2011
  * http://github.com/cowboy/javascript-sync-async-foreach
  * Copyright (c) 2011 "Cowboy" Ben Alman; Licensed MIT, GPL */
 
@@ -6,8 +6,9 @@
 
   // Iterate synchronously or asynchronously.
   exports.forEach = function(arr, eachFn, doneFn) {
-    var len = arr.length;
     var i = -1;
+    // Resolve array length to a valid (ToUint32) number.
+    var len = arr.length >>> 0;
 
     // This IIFE is called once now, and then again, by name, for each loop
     // iteration.
@@ -19,9 +20,13 @@
       // `this.async` done function?
       var abort = result === false;
 
+      // Increment counter variable and skip any indices that don't exist. This
+      // allows sparse arrays to be iterated.
+      do { ++i; } while (!(i in arr) && i !== len);
+
       // Exit if result passed to `this.async` done function or returned from
       // the `eachFn` callback was false, or when done iterating.
-      if (abort || ++i === len) {
+      if (abort || i === len) {
         // If a `doneFn` callback was specified, invoke that now. Pass in a
         // boolean value representing "not aborted" state along with the array.
         if (doneFn) {

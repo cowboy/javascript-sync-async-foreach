@@ -162,5 +162,39 @@ exports['foreach'] = {
         ], "should call eachFn for each array item, in order, followed by doneFn.");
       test.done();
     });
+  },
+  'Sparse array support': function(test) {
+    test.expect(1);
+    var that = this;
+
+    var arr = [];
+    arr[0] = "a";
+    arr[9] = "z";
+
+    forEach(arr, function(item, index, arr) {
+      that.track("each", item, index, arr);
+    });
+
+    test.deepEqual(that.order, [
+      "each", "a", 0, arr,
+      "each", "z", 9, arr
+    ], "should skip nonexistent array items.");
+    test.done();
+  },
+  'Invalid length sanitization': function(test) {
+    test.expect(1);
+    var that = this;
+
+    var obj = {length: 4294967299, 0: "a", 2: "b", 3: "c" };
+
+    forEach(obj, function(item, index, arr) {
+      that.track("each", item, index, arr);
+    });
+
+    test.deepEqual(that.order, [
+      "each", "a", 0, obj,
+      "each", "b", 2, obj
+    ], "should sanitize length property (ToUint32).");
+    test.done();
   }
 };

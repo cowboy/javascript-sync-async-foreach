@@ -177,6 +177,12 @@ Initial Release.
 v0.1.1
 Refactored code to be much simpler. Yay for unit tests!
 
+11/17/2011
+v0.1.2
+Adding sparse array support.
+Invalid length properties are now sanitized.
+This closes issue #1 (like a boss).
+
 ## License
 Copyright (c) 2011 "Cowboy" Ben Alman  
 Dual licensed under the MIT and GPL licenses.  

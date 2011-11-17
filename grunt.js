@@ -3,7 +3,7 @@ config.init({
   meta: {
     name: 'javascript-sync-async-foreach',
     title: 'JavaScript Sync/Async forEach',
-    version: '0.1.1',
+    version: '0.1.2',
     description: 'An optionally-asynchronous forEach with an interesting interface.',
     homepage: 'http://github.com/cowboy/javascript-sync-async-foreach',
     author: '"Cowboy" Ben Alman',
