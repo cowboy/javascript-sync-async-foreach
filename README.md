@@ -6,8 +6,10 @@ An optionally-asynchronous forEach with an interesting interface.
 
 This code should work just fine in Node.js:
 
+First, install the module with: `npm install async-foreach`
+
 ```javascript
-var forEach = require('lib/foreach').forEach;
+var forEach = require('async-foreach').forEach;
 forEach(["a", "b", "c"], function(item, index, arr) {
   console.log("each", item, index, arr);
 });
@@ -184,6 +186,6 @@ Invalid length properties are now sanitized.
 This closes issue #1 (like a boss).
 
 ## License
-Copyright (c) 2011 "Cowboy" Ben Alman  
-Dual licensed under the MIT and GPL licenses.  
+Copyright (c) 2012 "Cowboy" Ben Alman  
+Licensed under the MIT license.  
 <http://benalman.com/about/license/>

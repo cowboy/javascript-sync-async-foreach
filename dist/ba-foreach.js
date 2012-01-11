@@ -1,6 +1,6 @@
-/* JavaScript Sync/Async forEach - v0.1.2 - 11/17/2011
+/* JavaScript Sync/Async forEach - v0.1.2 - 1/10/2012
  * http://github.com/cowboy/javascript-sync-async-foreach
- * Copyright (c) 2011 "Cowboy" Ben Alman; Licensed MIT, GPL */
+ * Copyright (c) 2012 "Cowboy" Ben Alman; Licensed MIT */
 
 (function(exports) {
 

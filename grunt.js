@@ -1,17 +1,12 @@
 /*global config:true, task:true*/
 config.init({
+  pkg: '<json:package.json>',
   meta: {
-    name: 'javascript-sync-async-foreach',
     title: 'JavaScript Sync/Async forEach',
-    version: '0.1.2',
-    description: 'An optionally-asynchronous forEach with an interesting interface.',
-    homepage: 'http://github.com/cowboy/javascript-sync-async-foreach',
-    author: '"Cowboy" Ben Alman',
-    license: ['MIT', 'GPL'],
-    copyright: 'Copyright (c) 2011 "Cowboy" Ben Alman',
-    repository: 'git://github.com/cowboy/javascript-sync-async-foreach.git',
-    banner: '/* {{meta.title}} - v{{meta.version}} - {{today "m/d/yyyy"}}\n' +
-            ' * {{meta.homepage}}\n' + 
+    license: ['MIT'],
+    copyright: 'Copyright (c) 2012 "Cowboy" Ben Alman',
+    banner: '/* {{meta.title}} - v{{pkg.version}} - {{today "m/d/yyyy"}}\n' +
+            ' * {{pkg.homepage}}\n' +
             ' * {{{meta.copyright}}}; Licensed {{join meta.license}} */'
   },
   concat: {
