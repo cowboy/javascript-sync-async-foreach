@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/cowboy/javascript-sync-async-foreach.png)](http://travis-ci.org/cowboy/javascript-sync-async-foreach)
 # JavaScript Sync/Async forEach
 
 An optionally-asynchronous forEach with an interesting interface.
