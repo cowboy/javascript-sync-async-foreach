@@ -171,19 +171,23 @@ _Also, please don't edit files in the "dist" subdirectory as they are generated 
 
 ## Release History
 
-11/11/2011
-v0.1.0
-Initial Release.
-
-11/11/2011
-v0.1.1
-Refactored code to be much simpler. Yay for unit tests!
+04/29/2013
+v0.1.3
+Removed hard Node.js version dependency.
 
 11/17/2011
 v0.1.2
 Adding sparse array support.
 Invalid length properties are now sanitized.
 This closes issue #1 (like a boss).
+
+11/11/2011
+v0.1.1
+Refactored code to be much simpler. Yay for unit tests!
+
+11/11/2011
+v0.1.0
+Initial Release.
 
 ## License
 Copyright (c) 2012 "Cowboy" Ben Alman  
